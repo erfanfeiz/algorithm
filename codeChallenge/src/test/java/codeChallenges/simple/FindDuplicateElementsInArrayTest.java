@@ -1,12 +1,13 @@
 package codeChallenges.simple;
 
 
+import codeChallenges.geegksforgeeks.simple.FindDuplicateElementsInArray;
+import codeChallenges.geegksforgeeks.simple.StrategyRunner;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.Arrays;
-import java.util.List;
 import java.util.stream.Stream;
 
 public class FindDuplicateElementsInArrayTest {
@@ -18,11 +19,13 @@ public class FindDuplicateElementsInArrayTest {
         );
     }
 
+    FindDuplicateElementsInArray findDuplicateElementsInArray = new FindDuplicateElementsInArray();
 
     @ParameterizedTest
     @MethodSource("dataProvider")
     public void problem(int[] array, int[] expectedOutput) {
-        FindDuplicateElementsInArray duplicateElementsInArray = new FindDuplicateElementsInArray();
-        Assertions.assertEquals(Arrays.stream(expectedOutput).boxed().toList(), duplicateElementsInArray.solution(array));
+//        FindDuplicateElementsInArray duplicateElementsInArray = new FindDuplicateElementsInArray();
+        StrategyRunner strategyRunner = new StrategyRunner(findDuplicateElementsInArray);
+        Assertions.assertEquals(Arrays.stream(expectedOutput).boxed().toList(), strategyRunner.run(array));
     }
 }

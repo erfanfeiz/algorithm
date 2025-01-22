@@ -1,12 +1,12 @@
-package codeChallenges.simple;
+package codeChallenges.geegksforgeeks.simple;
 
 import java.util.List;
 
 public class StrategyRunner {
 
-    Strategy strategy;
+    FindDuplicateStrategy strategy;
 
-    public StrategyRunner(Strategy strategy) {
+    public StrategyRunner(FindDuplicateStrategy strategy) {
         this.strategy = strategy;
     }
 

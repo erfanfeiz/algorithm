@@ -1,4 +1,4 @@
-package codeChallenges.simple;
+package codeChallenges.geegksforgeeks.simple;
 
 public class CountWithGivenNumber {
 

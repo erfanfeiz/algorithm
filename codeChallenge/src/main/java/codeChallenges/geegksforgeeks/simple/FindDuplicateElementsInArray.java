@@ -1,9 +1,9 @@
-package codeChallenges.simple;
+package codeChallenges.geegksforgeeks.simple;
 
 import java.util.LinkedList;
 import java.util.List;
 
-public class FindDuplicateElementsInArray implements Strategy {
+public class FindDuplicateElementsInArray implements FindDuplicateStrategy {
 
     public List<Integer> solution(int[] arr) {
 
