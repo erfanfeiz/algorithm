@@ -17,11 +17,26 @@ class SumArrayIndexTest {
         );
     }
 
+    public static Stream<Arguments> dataProvider_dev() {
+        return Stream.of(
+                Arguments.of(new int[] {1, 2 , 3, 4, 5, 6, 7, 8, 9}, 0, 8, 45)
+        );
+    }
+
     @ParameterizedTest
     @MethodSource("dataProvider")
     public void sumArrayIndex(int[] arr, int index, int expectedSum) {
         StrategyRunner runner = new StrategyRunner(strategy);
         Assertions.assertEquals(expectedSum, runner.run(arr, index));
     }
+
+    @ParameterizedTest
+    @MethodSource("dataProvider_dev")
+    public void sumArrayIndex_dev(int[] arr, int start, int end, int expectedSum) {
+        StrategyRunner runner = new StrategyRunner(strategy);
+        Assertions.assertEquals(expectedSum, runner.run_dev(arr, start, end));
+    }
+
+
 
 }
