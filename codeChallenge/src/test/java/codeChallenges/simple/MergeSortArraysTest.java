@@ -5,6 +5,7 @@ import codeChallenges.leetCode.MergeSortArrays;
 import codeChallenges.leetCode.StrategyRunner;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
@@ -13,12 +14,11 @@ class MergeSortArraysTest {
 
     MergeSortArrayStrategy strategy = new MergeSortArrays();
 
-    static Stream<Object> dataProvider() {
+    static Stream<Arguments> dataProvider() {
         return Stream.of(
-                new Object[] {new int[] {1, 2, 3}, new int[] {5, 6, 2}, 3, 3, new int[] {1, 2, 2, 3, 5, 6}},
-                new Object[] {new int[] {1}, new int[] {}, 1, 0, new int[] {1}},
-                new Object[] {new int[] {}, new int[] {2}, 0, 1, new int[] {1}}
-                );
+                Arguments.of(new int[] {1, 2, 3}, new int[] {2, 5, 6}, 3, 3, new int[] {1, 2, 2, 3, 5, 6}),
+                Arguments.of(new int[] {1}, new int[] {}, 1, 0, new int[] {1}),
+                Arguments.of(new int[] {1, 2, 3}, new int[] {2, 5, 6}, 3, 3, new int[] {1, 2, 2, 3, 5, 6}));
     }
 
     @ParameterizedTest
